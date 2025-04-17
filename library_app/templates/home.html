@@ -1,0 +1,33 @@
+{% comment %} <!DOCTYPE html>
+<html>
+<head>
+    <title>Library Management System</title>
+</head>
+<body>
+    <h1>Welcome to the Library Management System</h1>
+    <p><a href="{% url 'view_books' %}">Go to Book Dashboard</a></p>
+ 
+
+
+</body>
+</html> {% endcomment %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>📚 Welcome to the Library Management System</h1>
+
+    <h2>Admin</h2>
+    <a href="{% url 'admin_login' %}">Admin Login</a><br>
+    <a href="{% url 'admin_signup' %}">Admin Signup</a>
+
+    <h2>User</h2>
+    <a href="{% url 'user_login' %}">User Login</a><br>
+    <a href="{% url 'user_signup' %}">User Signup</a>
+</body>
+</html>
+

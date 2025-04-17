@@ -1,0 +1,38 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Books</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>All Books</h1>
+    <a href="{% url 'add_book' %}">Add New Book</a>
+    <table border="1">
+        <tr>
+            <th>S.No</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>ISBN</th>
+            <th>Added On</th>
+            <th>Actions</th>
+        </tr>
+        {% for book in books %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ book.title }}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ book.isbn }}</td>
+            <td>{{ book.added_on }}</td>
+            <td>
+                <a href="{% url 'edit_book' book.id %}">Edit</a>
+                <form action="{% url 'delete_book' book.id %}" method="POST" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit" onclick="return confirm('Are you sure?')">Delete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
