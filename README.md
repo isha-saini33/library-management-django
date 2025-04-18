@@ -37,10 +37,6 @@ A Django-based web application that allows admins and users to manage and view b
 (![Screenshot view_all_books](https://github.com/user-attachments/assets/f0a851f8-49af-41f8-9204-e4dd71c21b2c)
 
 
-> Add your own screenshots inside a `/screenshots/` folder.
-
----
-
 ## 🧑‍💻 How to Run Locally
 
 ```bash
